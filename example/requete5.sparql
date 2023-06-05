@@ -1,6 +1,7 @@
-prefix ns1: <http://schema.org/> 
+prefix ns1: <https://schema.org/> 
 prefix ns2: <https://dbpedia.org/ontology/> 
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix example: <https://www.example.org/>
 
 SELECT ?name ?description
 WHERE {
@@ -8,5 +9,5 @@ WHERE {
     ?rest ns1:description ?description .
     ?rest ns1:openingHours ?heureOuverture .
 
-    FILTER(contains(?heureOuverture, "21:00"))
+    FILTER(contains(?heureOuverture, "21h00"))
 }

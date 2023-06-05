@@ -1,4 +1,12 @@
+prefix ns1: <https://schema.org/> 
+prefix ns2: <https://dbpedia.org/ontology/> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix example: <https://www.example.org/>
+
+# Le nom du restaurant crous qui a l'id 'r1000'
+
 SELECT ?rest_name WHERE {
-    ?rest a <https://schema.org/Restaurant>.
-    ?rest <https://schema.org/name> ?rest_name.
+    ?rest a ns1:Restaurant.
+    ?rest ns1:name ?rest_name.
+    ?rest ns1:identifier "r1000".
 }

@@ -3,25 +3,25 @@ mappings:
     subject: https://www.example.org/contact/$(id)/
     predicateobjects:
       - ['rdfs:label', $(id)]
-      - [a, "http://schema.org/ContactPoint"]
-      - ['schema:description', $(contact)]
+      - [a, 'https://schema.org/ContactPoint']
+      - ['https://schema.org/description', $(contact)]
 
   crous:
     subject: https://www.example.org/crous/$(id)/
     predicateobjects:
       - ['rdfs:label', $(title)]
-      - [a, "http://schema.org/Restaurant"]
-      - ['schema:name', $(title)]
-      - ['schema:description', $(infos)]
-      - ['schema:contactPoint', contact]
-      - ['schema:Identifier', $(id)]
-      - ['schema:photo', $(photo)]
-      - ['schema:latitude', $(lat)]
-      - ['schema:longitude', $(geolocalisation)]
-      - ['example:zone', $(zone)]
-      - ['example:secondaryZone', $(zone2)]
-      - ['example:typeCrous', $(type)]
-      - ['example:closing', $(closing)]
+      - [a, 'https://schema.org/Restaurant']
+      - ['https://schema.org/name', $(title)]
+      - ['https://schema.org/description', $(infos)]
+      - ['https://schema.org/ContactPoint', contact]
+      - ['https://schema.org/identifier', $(id)]
+      - ['https://schema.org/photo', $(photo)]
+      - ['https://schema.org/latitude', $(lat)]
+      - ['https://schema.org/longitude', $(geolocalisation)]
+      - ['https://www.example.org/zone', $(zone)]
+      - ['https://www.example.org/secondaryZone', $(zone2)]
+      - ['https://www.example.org/typeCrous', $(type)]
+      - ['https://www.example.org/closing', $(closing)]
   
 
 

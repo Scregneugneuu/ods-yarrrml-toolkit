@@ -1,13 +1,15 @@
-prefix ns1: <http://schema.org/> 
+prefix ns1: <https://schema.org/> 
 prefix ns2: <https://dbpedia.org/ontology/> 
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix example: <https://www.example.org/>
 
-SELECT ?Identifier ?name
+# Les restaurants du crous qui sont dans la zone de Nantes et qui accepte les paiements IZLY.
+
+SELECT ?identifier ?name
 WHERE {
-    ?rest ns1:Identifier ?Identifier .
+    ?rest ns1:identifier ?identifier .
     ?rest ns1:name ?name .
-    ?rest ns1:zone ?zone .
-    ?rest ns1:acceptsReservations true .
-    ?rest ns1:paymentAccepted ?paymentAccepted .
-    FILTER(contains(?zone,"Nantes") && contains(?paymentAccepted, "Carte Bancaire"))
+    ?rest example:zone ?zone .
+    ?rest ns1:description ?description .
+    FILTER(contains(?zone,"Nantes") && contains(?description, "IZLY"))
 }

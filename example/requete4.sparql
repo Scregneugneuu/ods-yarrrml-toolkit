@@ -1,12 +1,14 @@
-prefix ns1: <http://schema.org/> 
+prefix ns1: <https://schema.org/> 
 prefix ns2: <https://dbpedia.org/ontology/> 
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+prefix example: <https://www.example.org/>
 
-SELECT ?name ?note
+# Les restaurants du crous qui possèdent un point de contact qui contient Paris dans son adresse.
+
+SELECT ?name
 WHERE {
     ?rest ns1:name ?name .
-    ?rest ns1:aggregateRating ?note .
-    ?rest ns1:servesCuisine ?cuisine .
-    ?rest ns1:paymentAccepted ?paymentAccepted .
-    FILTER(?note > 4 && contains(?cuisine, "végétarien"))
+    ?rest ns1:ContactPoint ?contact .
+    ?contact ns1:description ?description .
+    FILTER(contains(?description, "Paris"))
 }
