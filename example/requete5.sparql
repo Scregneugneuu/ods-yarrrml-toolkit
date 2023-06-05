@@ -1,0 +1,12 @@
+prefix ns1: <http://schema.org/> 
+prefix ns2: <https://dbpedia.org/ontology/> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?name ?description
+WHERE {
+    ?rest ns1:name ?name .
+    ?rest ns1:description ?description .
+    ?rest ns1:openingHours ?heureOuverture .
+
+    FILTER(contains(?heureOuverture, "21:00"))
+}

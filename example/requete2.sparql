@@ -1,0 +1,13 @@
+prefix ns1: <http://schema.org/> 
+prefix ns2: <https://dbpedia.org/ontology/> 
+prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+
+SELECT ?Identifier ?name
+WHERE {
+    ?rest ns1:Identifier ?Identifier .
+    ?rest ns1:name ?name .
+    ?rest ns1:type "Cafétéria" .
+    ?rest ns1:reducedMobilityAccess true .
+    ?rest ns1:accessibility ?accessibility . 
+    FILTER contains(?accessibility,"bus")
+}

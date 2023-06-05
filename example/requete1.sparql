@@ -1,0 +1,4 @@
+SELECT ?rest_name WHERE {
+    ?rest a <https://schema.org/Restaurant>.
+    ?rest <https://schema.org/name> ?rest_name.
+}
