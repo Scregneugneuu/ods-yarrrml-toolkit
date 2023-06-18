@@ -3,11 +3,14 @@ prefix ns2: <https://dbpedia.org/ontology/>
 prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#>
 prefix example: <https://www.example.org/>
 
-SELECT ?name ?description
+# Le nom et l'identifiant des restaurant qui ferment à 21h
+
+SELECT ?name ?identifier
 WHERE {
+    
+    ?rest ns1:identifier ?identifier .
     ?rest ns1:name ?name .
     ?rest ns1:description ?description .
-    ?rest ns1:openingHours ?heureOuverture .
 
-    FILTER(contains(?heureOuverture, "21h00"))
+    FILTER(contains(?description, "21h00"))
 }

@@ -22,7 +22,3 @@ mappings:
       - ['https://www.example.org/secondaryZone', $(zone2)]
       - ['https://www.example.org/typeCrous', $(type)]
       - ['https://www.example.org/closing', $(closing)]
-  
-
-
-    
